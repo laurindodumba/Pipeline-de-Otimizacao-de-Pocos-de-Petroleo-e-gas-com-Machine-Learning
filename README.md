@@ -4,7 +4,7 @@ Projeto de análise de dados e machine learning para estimar a margem
 operacional diária de poços. O dashboard também apresenta agregações calculadas
 a partir do conjunto de dados.
 
-> A previsão é um apoio analítico para condições observadas.
+
 
 ## Estrutura
 
