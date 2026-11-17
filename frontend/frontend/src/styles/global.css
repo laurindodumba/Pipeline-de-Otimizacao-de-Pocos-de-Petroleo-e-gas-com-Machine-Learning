@@ -1,0 +1,280 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #28364b;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-ink: #34445a;
+  --color-ink-soft: #66748a;
+  --color-muted: #929caf;
+  --color-border: #e7e9ef;
+  --color-surface: #fff;
+  --color-sidebar: #f0f1f7;
+  --color-teal: #596bd5;
+  --color-teal-dark: #4859bd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 196px minmax(0, 1fr);
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background: var(--color-sidebar);
+  color: #657187;
+  padding: 0 16px 18px;
+  border-right: 1px solid #e6e8ef;
+}
+
+.brand {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 9px;
+  margin: 0 -16px 25px;
+  border-bottom: 1px solid #e4e6ed;
+  padding: 0 32px 0 33px;
+}
+
+.brand__mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: #596bd5;
+  color: #fff;
+  font-weight: 800;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.brand small {
+  margin-top: 3px;
+  color: #7d899d;
+  font-size: 0.68rem;
+}
+
+.sidebar__label {
+  margin: 7px 0 10px;
+  color: #8d98aa;
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.sidebar__label--other {
+  margin-top: 25px;
+}
+
+.sidebar__nav {
+  display: grid;
+  gap: 4px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 34px;
+  border-radius: 4px;
+  color: #7f8a9d;
+  font-size: 0.78rem;
+  padding: 8px 9px;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.nav-link:hover,
+.nav-link--active {
+  background: #e2e5f5;
+  color: #5366cf;
+}
+
+.nav-link--active {
+  background: #e2e5f5;
+}
+
+.nav-link__icon {
+  color: #7583a1;
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.app-main {
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: #fff;
+  padding: 8px clamp(20px, 3vw, 32px);
+}
+
+.topbar__search-wrap {
+  display: grid;
+  width: min(100%, 510px);
+  gap: 2px;
+}
+
+.topbar-search {
+  display: flex;
+  height: 34px;
+  align-items: center;
+  gap: 9px;
+  border-radius: 5px;
+  background: #f5f6fa;
+  color: #9aa5b7;
+  padding: 0 11px;
+}
+
+.topbar-search > span {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.topbar-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: 0.74rem;
+}
+
+.topbar-search input::placeholder {
+  color: #abb4c3;
+}
+
+.topbar__search-message {
+  min-height: 0.8rem;
+  color: var(--color-muted);
+  font-size: 0.61rem;
+}
+
+.topbar__user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #66748a;
+  font-size: 0.72rem;
+}
+
+.topbar__avatar {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffe8d2;
+  color: #9a6a39;
+  font-size: 0.61rem;
+  font-weight: 750;
+}
+
+.topbar__chevron {
+  color: #8c98ab;
+}
+
+.page-content {
+  padding: clamp(20px, 3vw, 32px);
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0 15px 11px;
+  }
+
+  .brand {
+    min-height: 48px;
+    margin: 0 -15px 9px;
+    padding: 0 18px;
+  }
+
+  .sidebar__label {
+    display: none;
+  }
+
+  .sidebar__nav {
+    display: flex;
+    gap: 6px;
+  }
+
+  .nav-link {
+    flex: 1;
+    padding: 9px;
+  }
+
+  .topbar__search-wrap {
+    width: auto;
+    flex: 1;
+  }
+
+  .topbar__user-name,
+  .topbar__chevron {
+    display: none;
+  }
+
+  .page-content {
+    padding: 20px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

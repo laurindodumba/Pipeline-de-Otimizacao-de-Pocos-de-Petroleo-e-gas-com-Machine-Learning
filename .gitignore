@@ -1,0 +1,23 @@
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
+# Node/Vite generated files
+**/node_modules/
+**/dist/
+**/.vite/
+*.local
+
+# Logs and editor files
+*.log
+.vscode/
+.idea/
