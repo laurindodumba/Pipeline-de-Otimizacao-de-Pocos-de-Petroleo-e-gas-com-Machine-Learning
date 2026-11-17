@@ -56,15 +56,6 @@ npm install
 npm run dev
 ```
 
-O `.env.example` aponta para a API local em `http://127.0.0.1:8000`.
-Configure `CORS_ALLOWED_ORIGINS` no processo do backend para corresponder à
-origem informada pelo Vite.
-
-## Dados e interpretação dos gráficos
-
-O CSV principal contém observações por poço, sem datas. Os gráficos mostram
-distribuição de margem, proporção de margens positivas/negativas, componentes
-médios de receita e custo e poços com maiores margens observadas. Não é
 possível inferir tendências temporais com esse conjunto de dados.
 
 Os conjuntos alternativos em `backend/dataset/` não alimentam o dashboard
